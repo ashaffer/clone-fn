@@ -12,10 +12,6 @@ module.exports = function(fn) {
 
   var tmp = function() { return toClone.apply(this, arguments); };
   
-  for(var key in toClone) {
-    tmp[key] = toClone[key];
-  }
-
   tmp.__isClone = true;
   tmp.__clonedFrom = toClone;
 
